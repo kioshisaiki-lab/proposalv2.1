@@ -88,7 +88,12 @@ bbtt3.addEventListener("click", function (){
 			bbtt3.style.opacity= "0";
 			sadcat.style.opacity= "1";
 			sadcat.muted = false;
-			sadcat.play();
+			sadcat.volume = 1;
+			sadcat.currentTime = 0;
+			sadcat.play().catch(() => {
+				sadcat.muted = true;
+				sadcat.play();
+			});
 									
 });
 
